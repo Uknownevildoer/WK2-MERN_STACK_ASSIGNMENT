@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 3000;
 // Middleware setup
 app.use(bodyParser.json());
 
-const logger = require('./midddleware/logger')
+const logger = require('./middleware/logger')
 const products = require('./routes/products')
 const login = require('./routes/login')
 

@@ -1,8 +1,8 @@
 const express = require('express')
 
-const routes = express.Router()
+const router = express.Router()
 
-route.get('/', (req, res) => {
+router.get('/', (req, res) => {
   res.send('Welcome to the Product API! Go to /api/products to see all products.');
 });
 

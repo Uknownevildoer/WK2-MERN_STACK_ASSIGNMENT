@@ -24,4 +24,4 @@ let products = [
     inStock: false
   }
 ];
-module.exports = products
+module.exports = {products}

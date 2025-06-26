@@ -1,8 +1,8 @@
-let {products} = require('../data/products')
+const data = require('../data/products')
 const getProducts =  (req, res) => {
   let { search, category, maxPrice, inStock, page = 1, limit = 5 } = req.query;
 
-  let result = [...products];
+  let result = [...data.products];
 
   // Search by name
   if (search) {
@@ -88,15 +88,14 @@ const updateProducts = (req,res)=>{
 }
 const deleteProduct =  (req, res) => {
   const { id } = req.params;
-  const product = products.find((product) => product.id === id);
+  const product = data.products.find((product) => product.id === id);
 
   if (!product) {
     return res.status(404).json({ success: false, msg: `No product with id ${id}` });
   }
 
-  products = products.filter((product) => product.id !== id); // update original array
-
-  return res.status(200).json({ success: true, data: products });
+  data.products = data.products.filter((product) => product.id !== id); // update original array
+  return res.status(200).json({ success: true, data: data.products });
 };
 
 module.exports = {

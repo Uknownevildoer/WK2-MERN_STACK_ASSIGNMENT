@@ -1,7 +1,7 @@
 const express = require('express')
 
 const router = express.Router()
-const authMiddleware = require('./midddleware/authorise')
+const authMiddleware = require('../middleware/authorise')
 
 
 
